@@ -36,8 +36,8 @@ describe("Список задач", () => {
     );
 
     expect(screen.getByText("Задача 1")).toBeInTheDocument();
-    expect(screen.getByText("Задача 3")).toBeInTheDocument();
     expect(screen.queryByText("Задача 2")).not.toBeInTheDocument();
+    expect(screen.getByText("Задача 3")).toBeInTheDocument();
   });
 
   // показывает как выполненные, так и не выполненные задачи
@@ -54,7 +54,7 @@ describe("Список задач", () => {
     );
 
     expect(screen.getByText("Задача 1")).toBeInTheDocument();
-    expect(screen.queryByText("Задача 2")).toBeInTheDocument();
+    expect(screen.getByText("Задача 2")).toBeInTheDocument();
     expect(screen.getByText("Задача 3")).toBeInTheDocument();
   });
 });
