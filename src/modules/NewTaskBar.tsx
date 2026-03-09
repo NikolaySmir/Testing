@@ -43,10 +43,7 @@ export const NewTaskBar = () => {
         disabledMessage="Нельзя завести больше 10 невыполненных задач"
       />
       <AddButton onClick={handleAdd} disabled={disabled} />
-      <FilterDoneButton
-        onChange={handleShowCompletedChange}
-        disabled={disabled}
-      />
+      <FilterDoneButton onChange={handleShowCompletedChange} />
     </div>
   );
 };
