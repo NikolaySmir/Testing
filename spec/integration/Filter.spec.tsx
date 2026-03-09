@@ -15,13 +15,9 @@ const initialState = {
   },
 };
 
-let store;
-
-beforeEach(() => {
-  store = createTestStore({ taskList: { ...initialState } });
-});
-
 describe("Список задач", () => {
+  let store;
+
   // не содержит выполненные задачи
   // после нажатия на кнопку фильтрации
   it("с включенным фильтром", () => {
