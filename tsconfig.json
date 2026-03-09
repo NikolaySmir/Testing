@@ -13,7 +13,7 @@
       "paths": {
         "src/*": ["./src/*"]
       },
-      "types": ["jest","@testing-library/jest-dom"]
+      "types": ["jest","@testing-library/jest-dom","node"]
     },
     "include": ["src", "spec", "jest.d.ts", "global.d.ts"],
     "exclude": ["node_modules", "coverage", "build"]
