@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { List } from "src/components/List";
 import { createTestStore } from "src/store/configureStore";
 import {

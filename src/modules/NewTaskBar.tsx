@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import { AddButton } from "src/components/AddButton";
 import { Input } from "src/components/Input";
 import { validateHeaderMax, validateHeaderMin } from "src/utils/helpers";

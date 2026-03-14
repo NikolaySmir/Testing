@@ -1,8 +1,8 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { createTestStore } from "src/store/configureStore";
 import { Provider } from "react-redux";
 import { List } from "src/components/List";
-import { addTask, tasksSelector, uncompleteCount } from "src/store/taskSlice";
+import { addTask, tasksSelector } from "src/store/taskSlice";
 
 it("Список содержит не больше 10 невыполненных задач", () => {
   const store = createTestStore();
