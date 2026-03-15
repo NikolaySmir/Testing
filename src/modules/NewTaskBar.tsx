@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import { AddButton } from "src/components/AddButton";
 import { Input } from "src/components/Input";
 import { validateHeaderMax, validateHeaderMin } from "src/utils/helpers";
@@ -43,10 +43,7 @@ export const NewTaskBar = () => {
         disabledMessage="Нельзя завести больше 10 невыполненных задач"
       />
       <AddButton onClick={handleAdd} disabled={disabled} />
-      <FilterDoneButton
-        onChange={handleShowCompletedChange}
-        disabled={disabled}
-      />
+      <FilterDoneButton onChange={handleShowCompletedChange} />
     </div>
   );
 };

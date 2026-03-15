@@ -4,7 +4,6 @@ import { List } from "src/components/List";
 import {
   deleteTask,
   filteredTasksSelector,
-  tasksSelector,
   toggleTask,
 } from "src/store/taskSlice";
 
