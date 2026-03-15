@@ -61,4 +61,49 @@ describe("Элемент списка задач", () => {
     expect(task1DeleteBtn).toBeDisabled();
     expect(task2DeleteBtn).not.toBeDisabled();
   });
+
+  it("при клике на чекбокс вызывается onToggle с правильным id", () => {
+    const mockOnToggle = jest.fn();
+    const task = {
+      id: "task-123",
+      header: "Тестовая задача",
+      done: false,
+    };
+
+    render(<Item {...task} onDelete={() => {}} onToggle={mockOnToggle} />);
+
+    const checkboxes = screen.getAllByRole("checkbox");
+
+    const taskCheckbox = checkboxes[1];
+    fireEvent.click(taskCheckbox);
+
+    expect(mockOnToggle).toHaveBeenCalledTimes(1);
+    expect(mockOnToggle).toHaveBeenCalledWith("task-123");
+  });
+
+  it("выполненная задача отображается с зачёркнутым текстом", () => {
+    const taskComplete = {
+      id: "task-1",
+      header: "Выполненная задача",
+      done: true,
+    };
+    const taskNotComplete = {
+      id: "task-2",
+      header: "Невыполненная задача",
+      done: false,
+    };
+
+    render(
+      <>
+        <Item {...taskComplete} onDelete={() => {}} onToggle={() => {}} />
+        <Item {...taskNotComplete} onDelete={() => {}} onToggle={() => {}} />
+      </>,
+    );
+
+    const completedTaskLabel = screen.getByText("Выполненная задача");
+    expect(completedTaskLabel.tagName).toBe("S");
+
+    const notCompletedTaskLabel = screen.getByText("Невыполненная задача");
+    expect(notCompletedTaskLabel.tagName).not.toBe("S");
+  });
 });
